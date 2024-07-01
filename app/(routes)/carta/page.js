@@ -38,7 +38,7 @@ export default function Carta(){
                                 <TabsList className={"parent-scroll-snap flex justify-start"}>
                                         {orderedCategories.map((category) => (
                                             <TabsTrigger
-                                                id={category.id}
+                                                key={category.id}
                                                 value={category.attributes.name}
                                                 onClick={() => setCurrentCategory(category.attributes.name)}
                                                 className={"child-scroll-snap grow-0 basis-[75px] shrink-0"}
