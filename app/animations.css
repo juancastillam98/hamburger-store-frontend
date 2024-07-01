@@ -1,0 +1,87 @@
+header{
+    animation: changeBackground linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 150px;
+}
+@keyframes changeBackground {
+    0{
+    opacity: 0;
+}
+    to{
+        background-color: #0c0c0c;
+    }
+}
+
+#mostrar menu nav
+
+.mostrar1 {
+    animation: showMenu1 0.4s ease-in-out forwards;
+}
+@keyframes showMenu1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mostrar2 {
+    animation: showMenu1 0.4s ease-in-out forwards .1s;
+}
+
+@keyframes showMenu2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mostrar3 {
+    animation: showMenu3 0.4s ease-in-out forwards .2s;
+}
+
+@keyframes showMenu3 {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mostrar4 {
+    animation: showMenu4 .4s ease-in-out forwards .3s;
+}
+@keyframes showMenu4 {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

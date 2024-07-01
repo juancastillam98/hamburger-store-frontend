@@ -1,7 +1,19 @@
-import { Inter } from "next/font/google";
+import {Barlow_Condensed, Raleway} from "next/font/google";
+import {Header} from "@/components/custom/Header";
+import ProductProvider from "@/context/ProductProvider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow_Condensed({
+    subsets: ["latin"],
+    weight: ["300", "700"],
+    style: ['normal', 'italic']
+});
+
+const raleway = Raleway({
+    subsets: ["latin"],
+    weight: ["300", "700", "900"],
+    style: ['normal', 'italic']
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <ProductProvider>
+        <body className={`${barlow.className} ${raleway.className}`}>
+            <Header/>
+            {children}
+        </body>
+    </ProductProvider>
     </html>
   );
 }
