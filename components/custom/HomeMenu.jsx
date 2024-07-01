@@ -47,7 +47,9 @@ export const HomeMenu = () => {
                     className={"title-shadow"}>OUR</span> MENU</h2>
                 <div className={"flex gap-6 parent-scroll-snap mt-12 sm:mt-16 lg:mt-20 xl:mt-24"}>
                     {imagenesArray?.map((element, index) => (
-                        <div className={"min-w-52 child-scroll-snap flex flex-col h-full justify-center items-center p-2 gap-y-2 bg-secondary md:flex-1-1-200"}>
+                        <div
+                            key={index}
+                            className={"min-w-52 child-scroll-snap flex flex-col h-full justify-center items-center p-2 gap-y-2 bg-secondary md:flex-1-1-200"}>
                             <h3 className={"font-raleway text-h3 text-accent"}>{element.category}</h3>
                             <article
                                 className={" custom-hover-3d h-full sm:h-auto w-full "}
