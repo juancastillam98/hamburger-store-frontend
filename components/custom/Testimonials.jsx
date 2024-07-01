@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const testimonials = [
     {
-        name: "Agueda Mª F",
+        name: "Agueda M F",
         review: "La atención recibida por parte de los trabajadores, la comida y el ambiente impecable, los dichos de Roberto Carlo claves, como :  más rico que levantarse tarde , y si sobra cena.... ¡el diseño de la bolsa con Mcpato es inmejorable!",
         rate: "⭐⭐⭐⭐⭐"
     },

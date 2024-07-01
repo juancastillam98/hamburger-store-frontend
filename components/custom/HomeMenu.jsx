@@ -3,7 +3,6 @@ import Image from "next/image";
 export const HomeMenu = () => {
     const screenWidth = window.innerWidth;
 
-
     const imagenEntrantesBg = `${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/image/upload/v1718390943/medium_entrantes_gyozas_dbae8f815c.webp`;
     const imagenEntrantesFront = `${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/image/upload/v1718464095/small_entrantes_gyozas_sin_fondo_9b4cd9961e.png`;
 
