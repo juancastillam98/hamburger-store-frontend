@@ -12,31 +12,30 @@ import Link from "next/link";
 
 const testimonials = [
     {
-        name: "Agueda M&aacute; F",
-        review: "La atenci&oacute;n recibida por parte de los trabajadores, la comida y el ambiente impecable, los dichos de Roberto Carlo claves, como: m&aacute;s rico que levantarse tarde, y si sobra cena.... &iexcl;el dise&ntilde;o de la bolsa con Mcpato es inmejorable!",
+        name: "Agueda M F",
+        review: "La atencion recibida por parte de los trabajadores la comida y el ambiente impecable los dichos de Roberto Carlo claves como mas rico que levantarse tarde y si sobra cena el diseno de la bolsa con Mcpato es inmejorable",
         rate: 5
     },
     {
         name: "David S",
-        review: "El servicio ha sido muy bueno y el personal tambi&eacute;n, aprecio el trato que Roberto Carlos nos ha dado, mucha profesionalidad y el toque de humor necesario para hacer la experiencia m&aacute;s amena!!",
+        review: "El servicio ha sido muy bueno y el personal tambien aprecio el trato que Roberto Carlos nos ha dado mucha profesionalidad y el toque de humor necesario para hacer la experiencia mas amena",
         rate: 5
     },
     {
-        name: "Mar&iacute;a Luisa",
-        review: "La mejor hamburgueser&iacute;a en la que he comido. Fuimos con nuestras hijas de 10 y 13 a&ntilde;os, se pudieron hacer su propia hamburguesa y quedaron encantadas. Repetiremos cada vez que volvamos a M&aacute;laga.",
+        name: "Maria Luisa",
+        review: "La mejor hamburgueseria en la que he comido Fuimos con nuestras hijas de 10 y 13 anos se pudieron hacer su propia hamburguesa y quedaron encantadas Repetiremos cada vez que volvamos a Malaga",
         rate: 5
     },
     {
         name: "Laura M",
-        review: "El servicio de 10/10, sobre todo un camarero llamado F&eacute;lix mu majo y la comida muy buena la verdad",
+        review: "El servicio de 10 sobre todo un camarero llamado Felix mu majo y la comida muy buena la verdad",
         rate: 5
     },
     {
-        name: "&Aacute;lvaro M",
-        review: "Tanto las carnes como hambur est&aacute;n muy ricas, la verdad que es buen sitio para comer. La &uacute;nica cosa a mejorar es cuando est&aacute; muy lleno (como casi cualquier restaurante) se nota m&aacute;s de lo normal.",
+        name: "Alvaro M",
+        review: "Tanto las carnes como hambur estan muy ricas la verdad que es buen sitio para comer La unica cosa a mejorar es cuando esta muy lleno como casi cualquier restaurante se nota mas de lo normal",
         rate: 4
     },
-    // Añade más testimonios según sea necesario
 ];
 
 export const Testimonials = () => {
