@@ -1,4 +1,5 @@
 "use client";
+import { Star } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -13,27 +14,27 @@ const testimonials = [
     {
         name: "Agueda Mª F",
         review: "La atención recibida por parte de los trabajadores, la comida y el ambiente impecable, los dichos de Roberto Carlo claves, como : más rico que levantarse tarde, y si sobra cena.... ¡el diseño de la bolsa con Mcpato es inmejorable!",
-        rate: "⭐⭐⭐⭐⭐"
+        rate: 5
     },
     {
         name: "David S",
         review: "El servicio ha sido muy bueno y el personal también, aprecio el trato que Roberto Carlos nos ha dado, mucha profesionalidad y el toque de humor necesario para hacer la experiencia más amena!!",
-        rate: "⭐⭐⭐⭐⭐"
+        rate: 5
     },
     {
         name: "María Luisa",
         review: "La mejor hamburguesería en la que he comido. Fuimos con nuestras hijas de 10 y 13 años, se pudieron hacer su propia hamburguesa y quedaron encantadas. Repetiremos cada vez que volvamos a Málaga.",
-        rate: "⭐⭐⭐⭐⭐"
+        rate: 5
     },
     {
         name: "Laura M",
         review: "El servicio de 10/10, sobre todo un camarero llamado Félix mu majo y la comida muy buena la verdad ⭐️⭐️⭐️⭐️⭐️",
-        rate: "⭐⭐⭐⭐⭐"
+        rate: 5
     },
     {
         name: "Álvaro M",
         review: "Tanto las carnes como hambur están muy ricas, la verdad que es buen sitio para comer. La única cosa a mejorar es cuando está muy lleno (como casi cualquier restaurante) se nota más de lo normal.",
-        rate: "⭐⭐⭐⭐"
+        rate: 4
     },
     // Añade más testimonios según sea necesario
 ];
@@ -68,7 +69,12 @@ export const Testimonials = () => {
                                             <div className={"w-full h-full bg-secondary flex flex-col gap-3 p-4"}>
                                                 <h4 className="text-h4 text-accent text-center">{testimonial.name}</h4>
                                                 <p className="text-base">"{testimonial.review}"</p>
-                                                <p>{testimonial.rate}</p>
+                                                <div className={"flex justify-center gap-1"}>
+                                                    {Array.from({ length: testimonial.rate }).map((_, i) => (
+                                                        <Star key={i} color="#ffdd00" strokeWidth={3} />
+                                                    ))}
+                                                </div>
+
                                             </div>
 
                                         </article>
