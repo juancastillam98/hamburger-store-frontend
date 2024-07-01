@@ -2,24 +2,23 @@
 import { useProducts } from "@/hooks/useHooks";
 import Image from "next/image";
 import {useEffect, useState} from "react";
-import {
-    useWindowWidth,
-} from '@react-hook/window-size'
 
 export const Hero = () => {
     const { products, newProduct } = useProducts();
     const [productHero, setProductHero] = useState({});
-    const windowsWidth = useWindowWidth();
+    const screenWidth = window.innerWidth;
 
-    const mobileBackgroundStyle = productHero?.id && windowsWidth <= 767
-        ? { backgroundImage: `url(${productHero.attributes.picture.data[0].attributes.url})` }
-        : {};
 
     useEffect(() => {
         if (newProduct) {
             setProductHero(newProduct[0]);
         }
     }, [newProduct]);
+
+    const mobileBackgroundStyle = productHero?.id && screenWidth <= 767
+        ? { backgroundImage: `url(${productHero.attributes.picture.data[0].attributes.url})` }
+        : {};
+
     const handleProductHero = (id) => {
         if (newProduct[0]?.id === id) {
             setProductHero(newProduct[0]);

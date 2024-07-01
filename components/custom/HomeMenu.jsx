@@ -1,11 +1,8 @@
 "use client"
 import Image from "next/image";
-import {
-    useWindowWidth,
-} from '@react-hook/window-size'
-import Link from "next/link";
 export const HomeMenu = () => {
-    const windowsWidth = useWindowWidth();
+    const screenWidth = window.innerWidth;
+
 
     const imagenEntrantesBg = `${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/image/upload/v1718390943/medium_entrantes_gyozas_dbae8f815c.webp`;
     const imagenEntrantesFront = `${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/image/upload/v1718464095/small_entrantes_gyozas_sin_fondo_9b4cd9961e.png`;
@@ -79,7 +76,7 @@ export const HomeMenu = () => {
                     ))}
                 </div>
                 <div
-                    className={`${windowsWidth < 640 ? "bg-menu-background-mobile" : "bg-menu-background-desktop"} bg-center bg-no-repeat bg-cover h-72 md:h-[420px] flex justify-center items-end pb-3 sm:pb-6 mt-10 sm:mt-14 lg:mt-16 xl:mt-20 `}
+                    className={`${screenWidth < 640 ? "bg-menu-background-mobile" : "bg-menu-background-desktop"} bg-center bg-no-repeat bg-cover h-72 md:h-[420px] flex justify-center items-end pb-3 sm:pb-6 mt-10 sm:mt-14 lg:mt-16 xl:mt-20 `}
                 >
                     <button className="font-raleway text-base bg-primary py-3 px-6 border-2 border-text">
                             <a href="/menu">ACCEDE A LA CARTA</a>
