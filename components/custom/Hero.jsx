@@ -1,29 +1,38 @@
-"use client"
+"use client";
 import { useProducts } from "@/hooks/useHooks";
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
     const { products, newProduct } = useProducts();
     const [productHero, setProductHero] = useState({});
-    const screenWidth = window.innerWidth;
-
+    const [screenWidth, setScreenWidth] = useState(null);
 
     useEffect(() => {
-        if (newProduct) {
+        // Verificar si estamos en el entorno del cliente antes de acceder a window
+        if (typeof window !== "undefined") {
+            setScreenWidth(window.innerWidth);
+        }
+
+        if (newProduct && newProduct.length > 0) {
             setProductHero(newProduct[0]);
         }
-    }, [newProduct]);
+    }, [newProduct]); // Dependencia del useEffect debe ser newProduct
 
-    const mobileBackgroundStyle = productHero?.id && screenWidth <= 767
-        ? { backgroundImage: `url(${productHero.attributes.picture.data[0].attributes.url})` }
-        : {};
+    const mobileBackgroundStyle =
+        productHero?.id && screenWidth <= 767
+            ? {
+                backgroundImage: `url(${
+                    productHero.attributes.picture.data[0].attributes.url
+                })`,
+            }
+            : {};
 
     const handleProductHero = (id) => {
         if (newProduct[0]?.id === id) {
             setProductHero(newProduct[0]);
-        }else {
-            const selectedProduct = products.find(product => product.id === id);
+        } else {
+            const selectedProduct = products.find((product) => product.id === id);
             setProductHero(selectedProduct || {});
         }
     };
@@ -36,12 +45,9 @@ export const Hero = () => {
                         className={`w-full h-full md:h-[500px] gap-4 bg-cover bg-center `}
                         style={mobileBackgroundStyle}
                     >
-                        <div
-                            className={"h-full px-4 pb-4 mobileBgLayer sm:bg-primary flex flex-col justify-center sm:justify-center gap-4 sm:gap-6"}
-                            >
+                        <div className={"h-full px-4 pb-4 mobileBgLayer sm:bg-primary flex flex-col justify-center sm:justify-center gap-4 sm:gap-6"}>
                             <h1 className="text-h1 font-raleway font-bold leading-none italic"><span className={"title-shadow whitespace-nowrap"}>WHY NOT A</span> <span className={"whitespace-nowrap"}>BURGER ? </span></h1>
-                            <p className="text-base">Descubre nuestras deliciosas hamburguesas hechas con los mejores
-                                ingredientes.</p>
+                            <p className="text-base">Descubre nuestras deliciosas hamburguesas hechas con los mejores ingredientes.</p>
                             {productHero?.id && (
                                 <div className="">
                                     <h3 className="text-h3 font-semibold text-accent">{productHero.attributes.name}</h3>
@@ -50,8 +56,7 @@ export const Hero = () => {
                             )}
                         </div>
                     </div>
-                    <div
-                        className="hidden md:flex flex-col justify-start md:justify-end w-full h-[400px]  md:h-[500px]">
+                    <div className="hidden md:flex flex-col justify-start md:justify-end w-full h-[400px]  md:h-[500px]">
                         {productHero?.id && (
                             <Image
                                 src={productHero.attributes.picture.data[0].attributes.url}
@@ -65,11 +70,12 @@ export const Hero = () => {
                 </div>
                 <div className="mt-4">
                     <div className="pt-16 pb-8 px-4 parent-scroll-snap mt-[-150px] sm:mt-0 flex gap-4  sm:gap-3 space-x-2  bg-transparent md:relative md:top-0">
-                    {newProduct && (
+                        {newProduct && newProduct.length > 0 && (
                             <article
                                 key={newProduct[0]?.id}
                                 onClick={() => handleProductHero(newProduct[0]?.id)}
-                                className="max-w-52 min-h-60 h-full w-full flex flex-col justify-between cursor-pointer child-scroll-snap bg-accent rounded-md p-2 hover:transform hover:-translate-y-8 hover:scale-110 transition-all duration-300 ">
+                                className="max-w-52 min-h-60 h-full w-full flex flex-col justify-between cursor-pointer child-scroll-snap bg-accent rounded-md p-2 hover:transform hover:-translate-y-8 hover:scale-110 transition-all duration-300 "
+                            >
                                 <Image
                                     src={newProduct[0]?.attributes.picture.data[0].attributes.formats.small.url}
                                     alt={`Picture of ${newProduct[0]?.attributes?.name}`}

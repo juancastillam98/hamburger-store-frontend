@@ -1,5 +1,5 @@
 "use client"
-import {Fragment, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import {useProducts} from "@/hooks/useHooks";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import Image from "next/image";
