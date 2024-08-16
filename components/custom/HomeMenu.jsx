@@ -31,7 +31,7 @@ export const HomeMenu = () => {
             foreground: imagenEntrantesFront
         },
         {
-            category: 'Hamburguesas',
+            category: 'Burgers',
             background: imagenHamburguesaBg,
             foreground: imagenHamburguesaFront
         },
@@ -79,7 +79,7 @@ export const HomeMenu = () => {
                                 />
                             </article>
                             <button className="font-raleway text-base bg-primary py-2 px-4 border-2 border-text">
-                                <a href="/menu"> VER MÁS</a>
+                                <a href="/menu">VER MÁS</a>
                             </button>
                         </div>
                     ))}

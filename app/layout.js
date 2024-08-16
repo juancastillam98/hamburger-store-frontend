@@ -25,8 +25,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <ProductProvider>
         <body className={`${barlow.className} ${raleway.className}`}>
-            <Header/>
-            {children}
+        <Header/>
+        {children}
+
+        <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+        <script
+            src="https://mediafiles.botpress.cloud/c0a23c6a-d5d7-44df-b877-e6ac2c04f7ef/webchat/v2/config.js"></script>
         </body>
     </ProductProvider>
     </html>

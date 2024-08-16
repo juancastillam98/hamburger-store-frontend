@@ -60,8 +60,8 @@ export default function Carta(){
                                             </TabsTrigger>
                                         ))}
                                 </TabsList>
-                                <div className="flex mt-8 md:mt-8 gap-4">
-                                        <div className="w-1/4 overflow-y-auto parent-scroll-snap-vertical">
+                                <div className="flex mt-8 md:mt-8 gap-4 md:flex md:flex-col">
+                                        <div className="w-1/4 md:w-full md:flex overflow-y-auto parent-scroll-snap-vertical">
                                                 {filteredProducts.map((product, index) => (
                                                     <TabsContent
                                                         key={index}
@@ -70,7 +70,7 @@ export default function Carta(){
                                                         className={"child-scroll-snap"}
                                                     >
                                                             <article
-                                                                className={`flex flex-col mb-4 w-full relative p-1 ${selectedProduct === product ? 'bg-accent' : 'bg-secondary'}  `}>
+                                                                className={`flex flex-col mb-4 w-full relative p-1 ${selectedProduct === product ? 'bg-accent' : 'bg-secondary'}  md:w-40`}>
                                                                     <div className={"aspect-square relative"}>
                                                                             <Image
                                                                                 src={product?.attributes?.picture?.data[0]?.attributes?.formats?.small?.url || '/default-image.png'}
@@ -87,29 +87,31 @@ export default function Carta(){
                                                     </TabsContent>
                                                 ))}
                                         </div>
-                                        <div className="w-3/4 h-dvh">
-                                                <article className="bg-secondary p-2 flex flex-col justify-between gap-4">
+                                        <div className="w-3/4 md:w-full h-dvh">
+                                                <article className="bg-secondary p-2 flex flex-col justify-between gap-4 md:flex-row">
                                                         {selectedProduct && (
                                                             <Image
                                                                 src={selectedProduct?.attributes?.picture?.data[0].attributes?.url}
                                                                 alt={`Picture of ${selectedProduct?.attributes?.name}`}
                                                                 width={400}
                                                                 height={400}
-                                                                className="object-cover shadow-lg h-full w-full"
+                                                                className="object-cover shadow-lg h-full w-full md:w-[40%]"
                                                             />
                                                         )}
-                                                        <h3 className="text-h3 font-raleway p-2 text-center">
-                                                                {selectedProduct?.attributes.name}
-                                                        </h3>
-                                                        <p className={"text-base font-barlow p-2 text-start"}>{selectedProduct?.attributes.description}</p>
-                                                        <div className={"flex justify-between items-center"}>
-                                                                <p className={" text-h3 font-barlow p-2 text-justify"}>{selectedProduct?.attributes.sell_price}€</p>
-                                                                <p className={"text-base font-barlow p-2 text-justify"}>Cantidad</p>
+                                                        <div className="flex flex-col justify-between">
+                                                                <h3 className="text-h3 font-raleway p-2 text-center">
+                                                                        {selectedProduct?.attributes.name}
+                                                                </h3>
+                                                                <p className={"text-base font-barlow p-2 text-start"}>{selectedProduct?.attributes.description}</p>
+                                                                <div className={"flex justify-between items-center"}>
+                                                                        <p className={" text-h3 font-barlow p-2 text-justify"}>{selectedProduct?.attributes.sell_price}€</p>
+                                                                        <p className={"text-base font-barlow p-2 text-justify"}>Cantidad</p>
+                                                                </div>
+                                                                <button
+                                                                    className="w-full sm:w-auto font-raleway text-base bg-primary py-2 px-4 border-2 border-text hover:bg-accent hover:text-primary">
+                                                                        <a href="/menu"> VER MÁS</a>
+                                                                </button>
                                                         </div>
-                                                        <button
-                                                            className="w-full sm:w-auto font-raleway text-base bg-primary py-2 px-4 border-2 border-text hover:bg-accent hover:text-primary">
-                                                                <a href="/menu"> VER MÁS</a>
-                                                        </button>
                                                 </article>
 
                                         </div>
