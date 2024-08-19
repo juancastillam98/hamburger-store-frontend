@@ -10,7 +10,7 @@ export const Header = () => {
         setIsopen(!isOpen)
     }
     return (
-        <header className={"w-full h-20 flex fixed bg-transparent md:bg-primary z-10 top-0"}>
+        <header className={"w-full h-20 flex fixed bg-transparent z-10 top-0"}>
             <nav className="max-w-screen-2xl w-full mx-auto flex justify-between items-center px-8">
                 <div className="w-[150px] h-auto">
                     <Link href={"/"}>

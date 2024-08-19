@@ -38,14 +38,24 @@ export const Hero = () => {
     };
 
     return (
-        <section className="h-dvh md:h-full w-full  xl:pt-28 bg-primary text-text">
-            <div className={" h-full flex flex-col max-w-screen-2xl mx-auto sm:p-6 md:p-8"}>
-                <div className="flex flex-col h-[65%] md:flex-row items-center justify-between gap-12">
-                    <div
-                        className={`w-full h-full md:h-[500px] gap-4 bg-cover bg-center `}
-                        style={mobileBackgroundStyle}
-                    >
-                        <div className={"h-full px-4 pb-4 mobileBgLayer sm:bg-primary flex flex-col justify-center sm:justify-center gap-4 sm:gap-6"}>
+        <section className="h-dvh w-full text-text pt-24"
+                 style={{
+                     backgroundImage: `
+                     linear-gradient(
+                        to right,
+                        #0c0c0c 0%,
+                        rgba(255, 255, 255, 0) 100%,
+                        transparent 100%
+                    ),
+                     url(${productHero?.attributes?.picture?.data[0].attributes.url})`,
+                     backgroundSize: "cover",
+                     backgroundRepeat: "no-repeat"
+                 }}
+        >
+            <div className={" h-full flex flex-col justify-between max-w-screen-2xl mx-auto sm:p-6 md:p-8"}>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-12 ">
+                    <div className={`w-full h-full gap-4 bg-cover bg-center `}>
+                        <div className={"h-full px-4 pb-4 mobileBgLayer  flex flex-col justify-center sm:justify-center gap-4 sm:gap-6"}>
                             <h1 className="text-h1 font-raleway font-bold leading-none italic"><span className={"title-shadow whitespace-nowrap"}>WHY NOT A</span> <span className={"whitespace-nowrap"}>BURGER ? </span></h1>
                             <p className="text-base">Descubre nuestras deliciosas hamburguesas hechas con los mejores ingredientes.</p>
                             {productHero?.id && (
@@ -56,17 +66,7 @@ export const Hero = () => {
                             )}
                         </div>
                     </div>
-                    <div className="hidden md:flex flex-col justify-start md:justify-end w-full h-[400px]  md:h-[500px]">
-                        {productHero?.id && (
-                            <Image
-                                src={productHero.attributes.picture.data[0].attributes.url}
-                                alt={`Picture of ${productHero?.attributes?.name}`}
-                                width={400}
-                                height={400}
-                                className="object-cover rounded-md shadow-lg h-full w-auto"
-                            />
-                        )}
-                    </div>
+
                 </div>
                 <div className="mt-4">
                     <div className="pt-16 pb-8 px-4 parent-scroll-snap mt-[-150px] sm:mt-0 flex gap-4  sm:gap-3 space-x-2  bg-transparent md:relative md:top-0">

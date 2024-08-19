@@ -17,6 +17,10 @@ body {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     overflow-x: scroll;
+
+  }
+  .parent-scroll-snap::-webkit-scrollbar {
+    display: none;  /* Ocultar en Chrome, Safari y Opera */
   }
   /* Media queries */
 
@@ -71,7 +75,7 @@ body {
     background-image: linear-gradient(
             to bottom,
             transparent 7%,
-            rgba(8, 8, 8, 0.64) 50%,
+            rgba(5, 7, 12, 0.64) 50%,
             rgba(0, 0, 0, 0.66) 95%
     );
     opacity: 0;
