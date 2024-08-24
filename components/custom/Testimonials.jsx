@@ -1,12 +1,7 @@
 "use client";
 import { Star } from 'lucide-react';
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
+import { Carousel, Typography, Button } from "@material-tailwind/react";
+
 import Link from "next/link";
 
 
@@ -58,32 +53,36 @@ export const Testimonials = () => {
                             </button>
 
                     </div>
-
-                    <div className=" w-full md:w-2/3 inset-0 overflow-hidden">
-                        <Carousel className="w-full">
-                            <CarouselContent>
-                                {testimonials.map((testimonial, index) => (
-                                    <CarouselItem key={index} className="lg:basis-1/2">
-                                        <article className="mx-auto max-w-[400px]] h-ful px-9">
-                                            <div className={"w-full h-full bg-secondary flex flex-col gap-3 p-4"}>
-                                                <h4 className="text-h4 text-accent text-center">{testimonial.name}</h4>
-                                                <p className="text-base">"{testimonial.review}"</p>
-                                                <div className={"flex justify-center gap-1"}>
-                                                    {Array.from({ length: testimonial.rate }).map((_, i) => (
-                                                        <Star key={i} color="#ffdd00" strokeWidth={3} />
-                                                    ))}
-                                                </div>
-
+                    <Carousel className="w-full md:w-2/3 pepito rounded-none h-[400px] sm:h-[450px]">
+                            {testimonials.map((testimonial, index) => (
+                                <div key={index} className="relative h-full w-full">
+                                    <div
+                                        className="absolute inset-0 grid h-full w-full place-items-center bg-secondary">
+                                        <div className="w-3/4 text-center md:w-2/4">
+                                            <Typography
+                                                variant="h4"
+                                                color="accent"
+                                                className="mb-4 text-xl md:text-2xl lg:text-3xl"
+                                            >
+                                                {testimonial.name}
+                                            </Typography>
+                                            <Typography
+                                                variant="body1"
+                                                color="white"
+                                                className="mb-6 opacity-80"
+                                            >
+                                                "{testimonial.review}"
+                                            </Typography>
+                                            <div className="flex justify-center gap-1">
+                                                {Array.from({length: testimonial.rate}).map((_, i) => (
+                                                    <Star key={i} color="#ffdd00" strokeWidth={3}/>
+                                                ))}
                                             </div>
-
-                                        </article>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                            <CarouselPrevious className={"bg-accent text-primary border-terciary"}/>
-                            <CarouselNext className={"bg-accent text-primary border-terciary"} />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </Carousel>
-                    </div>
                 </div>
             </div>
 

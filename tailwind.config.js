@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
+
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+
+module.exports =withMT({
   content: [
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
@@ -37,6 +40,10 @@ module.exports = {
       aspectRatio: {
         '9/16': '9 / 16',
       },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'autoFit': 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+      },
       colors: {
         primary: '#0c0c0c',
         secondary: '#3a3a3a',
@@ -61,4 +68,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+})

@@ -19,14 +19,6 @@ export const Hero = () => {
         }
     }, [newProduct]); // Dependencia del useEffect debe ser newProduct
 
-    const mobileBackgroundStyle =
-        productHero?.id && screenWidth <= 767
-            ? {
-                backgroundImage: `url(${
-                    productHero.attributes.picture.data[0].attributes.url
-                })`,
-            }
-            : {};
 
     const handleProductHero = (id) => {
         if (newProduct[0]?.id === id) {
@@ -38,7 +30,7 @@ export const Hero = () => {
     };
 
     return (
-        <section className="h-dvh w-full text-text pt-24"
+        <section className="h-[100dvh] w-full text-text pt-24"
                  style={{
                      backgroundImage: `
                      linear-gradient(
