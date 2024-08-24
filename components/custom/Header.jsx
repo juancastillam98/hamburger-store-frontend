@@ -50,7 +50,7 @@ export const Header = () => {
                         </MenuList>
                     </Menu>
 
-                    <Link className={"text-text text-base"}>Perfil</Link>
+                    {/*<p className={"text-text text-base"}>Perfil</p>*/}
                 </div>
             </nav>
         </header>
